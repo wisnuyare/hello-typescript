@@ -98,9 +98,11 @@ export default class ProductList extends Component<any, ProductListStateType> {
           this.state.productList.map((product) => {
             return (
               <div key={product.id} className="col s6">
-                <img src={product.images[0]} alt="Product" className="responsive-img"/>      
-                <Link to={'/' + product.id}>{product.title}</Link>
-                <div>{product.price}</div>
+                <img src={product.images[0]} alt="Product" className="responsive-img"/> 
+                <div className="row">
+                    <Link to={'/' + product.id} className="col s12">{product.title}</Link>
+                    <div className="col s12">{product.price}</div>
+                </div>     
               </div>
             )
           })
